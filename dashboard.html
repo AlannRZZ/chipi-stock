@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Control</title>
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="logo.jpeg">
+</head>
+<body>
+
+<div class="sidebar">
+  <button onclick="mostrar('productos')">Productos</button>
+  <button onclick="mostrar('ventas')">Ventas</button>
+  <div class="modo-toggle">
+  <span>🌙</span>
+  <label class="switch">
+    <input type="checkbox" id="modoSwitch" onchange="toggleModo()">
+    <span class="slider"></span>
+  </label>
+</div>
+  <button onclick="logout()">Cerrar sesión</button>
+</div>
+
+<div class="content">
+
+  <!-- PRODUCTOS -->
+  <div id="productos">
+    <div class="header-productos">
+  <img src="logo.jpeg" class="logo-dashboard">
+  <h2>Productos</h2>
+</div>
+<button class="boton-chico" onclick="mostrarSub('agregar')">➕ Agregar</button>
+<button class="boton-chico" onclick="mostrarSub('stock')">📦 Stock</button>
+
+    <!-- AGREGAR -->
+    <div id="agregar">
+      <input id="nombre" placeholder="Nombre">
+      <input id="stockInput" type="number" placeholder="Stock">
+      <input id="vencimiento" type="date">
+      <input id="costo" type="number" placeholder="Costo">
+      <input id="precio" type="number" placeholder="Precio">
+
+      <select id="rubro">
+        <option>Panadería</option>
+        <option>Heladería</option>
+        <option>Almacén</option>
+      </select>
+
+      <button class="boton-chico" onclick="agregarProducto()">💾 Guardar</button>
+    </div>
+
+    <!-- STOCK -->
+    <div id="stock" style="display:none;">
+      <h3>Lista de productos</h3>
+
+      <!-- 🔎 BUSCADOR -->
+      <input 
+        type="text" 
+        id="buscador" 
+        placeholder="Buscar producto..." 
+        oninput="cargarProductos()"
+      >
+
+      <div id="lista"></div>
+    </div>
+  </div>
+
+  <!-- VENTAS -->
+  <div id="ventas" style="display:none;">
+    <h2>Ventas</h2>
+    <select id="productoVenta"></select>
+    <input id="cantidadVenta" type="number" placeholder="Cantidad">
+    <button class="boton-chico" onclick="vender()">Vender</button>
+
+    <h3>Historial</h3>
+<button class="boton-chico" onclick="borrarHistorial()">🗑️ Borrar historial</button>
+
+<div id="historial"></div>
+  </div>
+
+</div>
+
+<script type="module" src="app.js"></script>
+
+</body>
+</html>
