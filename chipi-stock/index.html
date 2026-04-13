@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>chipi.stock</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="logo.jpeg">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="login-body">
+
+  <div class="login-container">
+    <img src="logo.jpeg" class="logo-login">
+    <h2 class="texto-login">CHIPI STOCK</h2>
+    <input type="text" id="user" placeholder="Usuario">
+    <input type="password" id="pass" placeholder="Contraseña">
+    <button onclick="login()">Ingresar</button>
+    <p id="error"></p>
+  </div>
+
+  <script>
+    function login() {
+      const user = document.getElementById("user").value;
+      const pass = document.getElementById("pass").value;
+
+      if(user === "admin" && pass === "1234"){
+        localStorage.setItem("auth", "true");
+        window.location.href = "dashboard.html";
+      } else {
+        document.getElementById("error").innerText = "Datos incorrectos";
+      }
+    }
+  </script>
+
+</body>
+</html>

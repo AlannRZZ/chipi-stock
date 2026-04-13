@@ -1,0 +1,283 @@
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+.login-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f2f2f2;
+}
+.texto-login{
+    color: #ff009d;
+}
+.login-container {
+  background: rgb(0, 0, 0);
+  padding: 30px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  margin: 5px 0;
+  padding: 10px;
+
+}
+/* LOGIN */
+.logo-login {
+  width: 100px;
+  margin-bottom: 20px;
+background: #ffffff;
+}
+
+/* DASHBOARD */
+.header-productos {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-dashboard {
+  width: 40px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #ff009d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: #555;
+  transform: scale(1.03);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+.sidebar {
+  width: 200px;
+  background: #222;
+  color: white;
+  height: 100vh;
+  position: fixed;
+}
+
+.sidebar button {
+  display: block;
+  width: 100%;
+  background: none;
+  color: white;
+  border: none;
+  padding: 15px;
+  text-align: left;
+}
+
+.content {
+  margin-left: 200px;
+  padding: 20px;
+}
+
+.low-stock {
+  color: red;
+}
+.producto-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.producto-item .nombre {
+  flex: 2;
+}
+
+.producto-item .stock {
+  width: 30px;
+  text-align: center;
+}
+
+.producto-item button {
+  width: 35px;
+  padding: 5px;
+  font-size: 14px;
+}
+.detalle {
+  font-size: 12px;
+  color: gray;
+  margin-left: 10px;
+}
+.boton-chico {
+  width: auto;
+  padding: 5px 10px;
+  font-size: 13px;
+  margin: 5px 0;
+}
+.boton-accion {
+  border-radius: 5px;
+}
+
+.boton-accion:hover {
+  opacity: 0.85;
+}
+/* SWITCH */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.3s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/* CONTENEDOR */
+.modo-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  color: white;
+}
+.dark {
+  background: #121212;
+  color: white;
+}
+
+.dark .content {
+  background: #1e1e1e;
+}
+
+.dark .sidebar {
+  background: #000;
+}
+
+.dark input,
+.dark select {
+  background: #333;
+  color: white;
+  border: 1px solid #555;
+}
+
+.dark .producto-item {
+  border-bottom: 1px solid #444;
+}
+/* 📱 MODO CELULAR */
+@media (max-width: 768px) {
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .sidebar button {
+    padding: 10px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .content {
+    margin-left: 0;
+    padding: 10px;
+  }
+}
+@media (max-width: 768px) {
+
+  .producto-item {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .producto-item .nombre {
+    flex: 100%;
+    font-weight: bold;
+  }
+
+  .producto-item .stock {
+    width: auto;
+  }
+
+  .detalle {
+    flex: 100%;
+    font-size: 11px;
+  }
+
+  .producto-item button {
+    flex: 1;
+  }
+}
+@media (max-width: 768px) {
+
+  input, select {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
+@media (max-width: 768px) {
+
+  .login-container {
+    width: 90%;
+  }
+}
+@media (max-width: 768px) {
+
+  .modo-toggle {
+    justify-content: center;
+  }
+}
+
+.logo-sidebar {
+  text-align: center;
+  padding: 10px;
+}
+
+.logo-sidebar img {
+  width: 60px;
+}
